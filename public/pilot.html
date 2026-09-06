@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÀYÍPADÀ — The Many-Faced God (5-sec Pilot)</title>
+<meta property="og:title" content="ÀYÍPADÀ — The Many-Faced God">
+<meta property="og:description" content="He has never owned a single face. 5-second pilot.">
+<meta property="og:image" content="/pilot/poster.jpg">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #000; color: #e8e2f2;
+    font-family: Georgia, 'DejaVu Serif', serif;
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; padding: 2.5rem 1.25rem 3rem;
+  }
+  .kicker {
+    font-family: Verdana, sans-serif; font-size: .8rem;
+    letter-spacing: .45em; text-transform: uppercase;
+    color: #8f7bb5; margin-bottom: 1rem;
+  }
+  h1 {
+    font-family: Verdana, sans-serif; font-weight: 800;
+    font-size: clamp(2.4rem, 7vw, 4.2rem); letter-spacing: .18em;
+    background: linear-gradient(180deg, #d6b8ff 0%, #9a6bff 60%, #6d3fd4 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; margin-left: .18em;
+    text-align: center;
+  }
+  .sub {
+    font-family: Verdana, sans-serif; letter-spacing: .5em; margin-left: .5em;
+    font-size: .95rem; color: #bdb2d4; margin-top: .7rem; text-align: center;
+  }
+  .rule { width: 180px; height: 2px; margin: 1.6rem auto 2rem;
+    background: linear-gradient(90deg, transparent, #9a6bff, transparent); }
+  .player {
+    width: 100%; max-width: 1024px; border-radius: 14px; overflow: hidden;
+    border: 1px solid #2a2140;
+    box-shadow: 0 0 80px rgba(122, 63, 255, .22), 0 24px 60px rgba(0,0,0,.8);
+    background: #000;
+  }
+  video { width: 100%; aspect-ratio: 16 / 9; display: block; background: #000; }
+  .controls {
+    display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap;
+    margin-top: 1.4rem;
+  }
+  button, a.btn {
+    font-family: Verdana, sans-serif; font-size: .85rem; letter-spacing: .12em;
+    padding: .7rem 1.5rem; border-radius: 999px; cursor: pointer;
+    border: 1px solid #4a3670; background: #150f24; color: #d9ccf5;
+    text-decoration: none; transition: all .2s ease;
+  }
+  button:hover, a.btn:hover { background: #241640; border-color: #9a6bff; }
+  button.primary { background: #6d3fd4; border-color: #6d3fd4; color: #fff; }
+  button.primary:hover { background: #8256ef; }
+  .beats {
+    max-width: 1024px; width: 100%; margin-top: 2.2rem;
+    display: grid; gap: .6rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .beat {
+    background: #0c0916; border: 1px solid #221a38; border-radius: 10px;
+    padding: 1rem 1.1rem; font-size: .92rem; line-height: 1.45; color: #cfc4e8;
+  }
+  .beat b { display: block; font-family: Verdana, sans-serif; font-size: .72rem;
+    letter-spacing: .2em; color: #9a6bff; margin-bottom: .4rem; font-weight: 700; }
+  .foot { margin-top: 2.5rem; font-size: .8rem; color: #554a75;
+    font-family: Verdana, sans-serif; letter-spacing: .1em; text-align: center; }
+  .foot a { color: #9a6bff; }
+</style>
+</head>
+<body>
+  <div class="kicker">Sway &middot; 5-second pilot</div>
+  <h1>&Agrave;Y&Iacute;PAD&Agrave;</h1>
+  <div class="sub">THE MANY-FACED GOD</div>
+  <div class="rule"></div>
+
+  <div class="player">
+    <video id="vid" src="/pilot/ayipada-5sec-pilot.mp4" poster="/pilot/poster.jpg"
+           controls playsinline autoplay muted loop preload="auto"></video>
+  </div>
+
+  <div class="controls">
+    <button class="primary" id="soundBtn">&#128266; TAP FOR SOUND</button>
+    <button id="replayBtn">&#8635; REPLAY</button>
+    <a class="btn" href="/pilot/ayipada-5sec-pilot.mp4" download="ayipada-5sec-pilot.mp4">&#8681; DOWNLOAD MP4</a>
+  </div>
+
+  <div class="beats">
+    <div class="beat"><b>0.0s &mdash; THE MASK</b>He has never owned a single face.</div>
+    <div class="beat"><b>1.2s &mdash; EMERGENCE</b>Every mask &mdash; a life he wore.</div>
+    <div class="beat"><b>2.2s &mdash; THE COLLECTION</b>King &middot; warrior &middot; child &middot; spirit &middot; fool.</div>
+    <div class="beat"><b>3.4s &mdash; THE REACH</b>He makes you question who you are.</div>
+    <div class="beat"><b>4.2s &mdash; TITLE</b>&Agrave;y&iacute;pad&agrave; &mdash; the many-faced god.</div>
+  </div>
+
+  <div class="foot">Rendered with <a href="/">SWAY</a> &middot; Remotion comp <b>Ayipada5SecPilot</b> &middot; 1920&times;1080 @30fps</div>
+
+<script>
+  const vid = document.getElementById('vid');
+  const soundBtn = document.getElementById('soundBtn');
+  soundBtn.addEventListener('click', () => {
+    vid.muted = false; vid.volume = 1; vid.currentTime = 0; vid.play();
+    soundBtn.innerHTML = '&#128266; SOUND ON &mdash; REPLAYING';
+    setTimeout(() => soundBtn.innerHTML = '&#128266; SOUND ON', 2500);
+  });
+  document.getElementById('replayBtn').addEventListener('click', () => {
+    vid.currentTime = 0; vid.play();
+  });
+  vid.addEventListener('click', () => { if (vid.muted) { vid.muted = false; soundBtn.innerHTML = '&#128266; SOUND ON'; } });
+</script>
+</body>
+</html>
