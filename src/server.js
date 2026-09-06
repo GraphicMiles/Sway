@@ -14,6 +14,11 @@ const { execSync } = require("child_process");
 const app = express();
 app.use(cors());
 app.use(express.json());
+// /pilot page — registered BEFORE static so it isn't shadowed
+// by the public/pilot/ asset directory (which would 301 /pilot -> /pilot/)
+app.get("/pilot", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "pilot.html"));
+});
 app.use(express.static("public"));
 app.use("/assets", express.static(path.join(__dirname, "..", "assets")));
 
