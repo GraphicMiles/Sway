@@ -2,15 +2,19 @@
   "name": "ayipada-pilot",
   "version": "1.0.0",
   "description": "Àyípadà - The Many-Faced God 2D Animation Pilot",
+  "main": "src/server.js",
   "scripts": {
-    "start": "remotion studio",
-    "build": "remotion render Main out.mp4",
-    "preview": "remotion preview"
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "preview": "remotion preview",
+    "render": "remotion render FullPilot out/pilot.mp4",
+    "render:scene": "remotion render Scene out/scene.mp4"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
     "@remotion/bundler": "^4.0.0",
     "@remotion/renderer": "^4.0.0",
+    "express": "^4.18.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remotion": "^4.0.0"
@@ -18,5 +22,8 @@
   "devDependencies": {
     "@types/react": "^18.2.0",
     "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÀYÍPADÀ - The Many-Faced God</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: #f5a623;
+    }
+    .subtitle {
+      color: #888;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .api-info {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1.5rem;
+      max-width: 600px;
+      width: 100%;
+    }
+    .api-info h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #f5a623;
+    }
+    code {
+      background: #222;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.9rem;
+    }
+    pre {
+      background: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .endpoint {
+      margin: 1rem 0;
+    }
+    .method {
+      display: inline-block;
+      background: #28a745;
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    .method.post { background: #007bff; }
+    .method.get { background: #28a745; }
+  </style>
+</head>
+<body>
+  <h1>ÀYÍPADÀ</h1>
+  <p class="subtitle">The Many-Faced God - 2D Animation Pilot</p>
+
+  <div class="api-info">
+    <h2>🎬 Render API</h2>
+    
+    <div class="endpoint">
+      <span class="method post">POST</span>
+      <code>/api/render</code>
+      <pre>{
+  "composition": "FullPilot",
+  "output": "out/pilot.mp4"
+}</pre>
+    </div>
+
+    <div class="endpoint">
+      <span class="method get">GET</span>
+      <code>/api/compositions</code>
+      <p style="margin-top: 0.5rem; color: #888;">List available compositions</p>
+    </div>
+
+    <div class="endpoint">
+      <span class="method get">GET</span>
+      <code>/download/{filename}</code>
+      <p style="margin-top: 0.5rem; color: #888;">Download rendered video</p>
+    </div>
+
+    <h2 style="margin-top: 2rem;">Available Compositions</h2>
+    <ul style="margin-left: 1.5rem; color: #888;">
+      <li>FullPilot - Complete 1-minute pilot</li>
+      <li>Opening - Scene 1</li>
+      <li>Collection - Scene 2</li>
+      <li>Lurking - Scene 3</li>
+      <li>RaisingHand - Scene 4</li>
+      <li>CollectionFloating - Scene 5</li>
+      <li>Reaching - Scene 6</li>
+      <li>LeaningBack - Scene 7</li>
+      <li>LookingUp - Scene 8</li>
+      <li>MasksTurning - Scene 9</li>
+      <li>Staring - Scene 10</li>
+    </ul>
+  </div>
+</body>
+</html>

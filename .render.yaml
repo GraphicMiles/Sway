@@ -1,0 +1,9 @@
+# Render Blueprint
+services:
+  - type: web
+    name: ayipada-pilot
+    env: node
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
