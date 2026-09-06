@@ -1,0 +1,13 @@
+# Render Blueprint - Sway
+
+services:
+  - type: web
+    name: sway
+    env: node
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production

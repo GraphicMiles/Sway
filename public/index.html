@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SWAY - Agentic Video Maker</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle { color: #888; margin-bottom: 3rem; font-size: 1.1rem; }
+    
+    .section {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #667eea;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .endpoint {
+      background: #0a0a0a;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .method {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+    .method.get { background: #22c55e; color: #000; }
+    .method.post { background: #3b82f6; color: #fff; }
+    .method.delete { background: #ef4444; color: #fff; }
+    
+    code {
+      background: #1a1a1a;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.9rem;
+      color: #f0abfc;
+    }
+    
+    pre {
+      background: #0a0a0a;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      border: 1px solid #222;
+    }
+    
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #0a0a0a;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>SWAY</h1>
+    <p class="subtitle">Agentic Video Maker - Generate videos programmatically</p>
+    
+    <div class="status">
+      <span class="status-dot"></span>
+      <span>Service Online</span>
+    </div>
+    
+    <div class="section">
+      <h2>🎬 Render Video</h2>
+      <div class="endpoint">
+        <span class="method post">POST</span>
+        <code>/api/render</code>
+        <pre>{
+  "composition": "Main",
+  "props": {
+    "backgroundColor": "#000000",
+    "image": "/assets/scene1.png"
+  },
+  "output": "out/video.mp4"
+}</pre>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>📁 Manage Scenes</h2>
+      <div class="endpoint">
+        <span class="method get">GET</span>
+        <code>/api/scenes</code>
+        <p style="margin-top: 0.5rem; color: #888;">List all available scenes</p>
+      </div>
+      <div class="endpoint">
+        <span class="method post">POST</span>
+        <code>/api/scenes</code>
+        <pre>{
+  "name": "NewScene",
+  "component": "NewScene",
+  "props": {}
+}</pre>
+      </div>
+      <div class="endpoint">
+        <span class="method delete">DELETE</span>
+        <code>/api/scenes/:name</code>
+        <p style="margin-top: 0.5rem; color: #888;">Delete a scene</p>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>🖼️ Manage Assets</h2>
+      <div class="endpoint">
+        <span class="method get">GET</span>
+        <code>/api/assets</code>
+        <p style="margin-top: 0.5rem; color: #888;">List all assets</p>
+      </div>
+      <div class="endpoint">
+        <span class="method post">POST</span>
+        <code>/api/assets</code>
+        <pre>{
+  "name": "scene1.png",
+  "data": "base64-encoded-data",
+  "type": "image/png"
+}</pre>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>📊 Status</h2>
+      <div class="endpoint">
+        <span class="method get">GET</span>
+        <code>/health</code>
+        <p style="margin-top: 0.5rem; color: #888;">Health check</p>
+      </div>
+      <div class="endpoint">
+        <span class="method get">GET</span>
+        <code>/status</code>
+        <p style="margin-top: 0.5rem; color: #888;">System status and available compositions</p>
+      </div>
+    </div>
+    
+    <div class="footer">
+      SWAY v0.1.0 - Agentic Video Maker
+    </div>
+  </div>
+</body>
+</html>
