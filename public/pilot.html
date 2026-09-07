@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ÀYÍPADÀ — The Many-Faced God (5-sec Pilot)</title>
+<title>ÀYÍPADÀ — The Many-Faced God (2D Animated Pilot)</title>
 <meta property="og:title" content="ÀYÍPADÀ — The Many-Faced God">
-<meta property="og:description" content="He has never owned a single face. 5-second pilot.">
+<meta property="og:description" content="He has never owned a single face. 2D animated pilot.">
 <meta property="og:image" content="/pilot/poster.jpg">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -57,7 +57,7 @@
   .beats {
     max-width: 1024px; width: 100%; margin-top: 2.2rem;
     display: grid; gap: .6rem;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
   .beat {
     background: #0c0916; border: 1px solid #221a38; border-radius: 10px;
@@ -71,31 +71,29 @@
 </style>
 </head>
 <body>
-  <div class="kicker">Sway &middot; 5-second pilot</div>
+  <div class="kicker">Sway &middot; 2D animated pilot</div>
   <h1>&Agrave;Y&Iacute;PAD&Agrave;</h1>
   <div class="sub">THE MANY-FACED GOD</div>
   <div class="rule"></div>
 
   <div class="player">
-    <video id="vid" src="/pilot/ayipada-5sec-pilot.mp4" poster="/pilot/poster.jpg"
+    <video id="vid" src="/pilot/ayipada-2d-pilot.mp4" poster="/pilot/poster.jpg"
            controls playsinline autoplay muted loop preload="auto"></video>
   </div>
 
   <div class="controls">
     <button class="primary" id="soundBtn">&#128266; TAP FOR SOUND</button>
     <button id="replayBtn">&#8635; REPLAY</button>
-    <a class="btn" href="/pilot/ayipada-5sec-pilot.mp4" download="ayipada-5sec-pilot.mp4">&#8681; DOWNLOAD MP4</a>
+    <a class="btn" href="/pilot/ayipada-2d-pilot.mp4" download="ayipada-2d-pilot.mp4">&#8681; DOWNLOAD MP4</a>
   </div>
 
   <div class="beats">
-    <div class="beat"><b>0.0s &mdash; THE MASK</b>He has never owned a single face.</div>
-    <div class="beat"><b>1.2s &mdash; EMERGENCE</b>Every mask &mdash; a life he wore.</div>
-    <div class="beat"><b>2.2s &mdash; THE COLLECTION</b>King &middot; warrior &middot; child &middot; spirit &middot; fool.</div>
-    <div class="beat"><b>3.4s &mdash; THE REACH</b>He makes you question who you are.</div>
-    <div class="beat"><b>4.2s &mdash; TITLE</b>&Agrave;y&iacute;pad&agrave; &mdash; the many-faced god.</div>
+    <div class="beat"><b>0.0s &mdash; THE IDLE GOD</b>Rigged cartoon &mdash; breathing body, swinging bells, glowing eyes. He has never owned a single face.</div>
+    <div class="beat"><b>3.8s &mdash; THE REACH</b>Impact frame &mdash; shake, flash, speed lines. Every mask &mdash; a life he wore.</div>
+    <div class="beat"><b>6.8s &mdash; THE COLLECTION</b>Shimmering masks rise into the title. &Agrave;y&iacute;pad&agrave; &mdash; the many-faced god.</div>
   </div>
 
-  <div class="foot">Rendered with <a href="/">SWAY</a> &middot; Remotion comp <b>Ayipada5SecPilot</b> &middot; 1920&times;1080 @30fps</div>
+  <div class="foot">Rigged 2D animation rendered with <a href="/">SWAY</a> &middot; 1920&times;1080 @24fps &middot; 10 sec</div>
 
 <script>
   const vid = document.getElementById('vid');
